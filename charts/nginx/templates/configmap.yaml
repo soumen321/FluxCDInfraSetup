@@ -4,4 +4,4 @@ metadata:
  name: {{ .Release.Name }}-index-html
 data:
  index.html: |
- {{ .Values.indexHtml | nindent 4 }}
+ {{- coalesce .Values.indexHTML .Values.indexHtml | toString | nindent 4 }}
