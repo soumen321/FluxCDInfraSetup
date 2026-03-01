@@ -7,7 +7,7 @@ spec:
   interval: 1m
   chart:
     spec:
-      chart: /charts/nginx
+      chart: ./charts/nginx
       sourceRef:
         kind: GitRepository
         name: flux-system
