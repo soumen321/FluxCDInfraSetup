@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ .Release.Name }}-index-html
+ name: {{ .Release.Name }}-index-html
 data:
-  index.html: |-
-{{- .Values.indexHTML | toString | nindent 4 }}
+ index.html: |
+ {{ .Values.indexHtml | nindent 4 }}
