@@ -50,7 +50,7 @@ spec:
       volumes:
         - name: html
           configMap:
-            name: {{ ".Release.Name" }}-index-html          
+            name: {{ .Release.Name }}-index-html          
           {{- with .Values.livenessProbe }}
           livenessProbe:
             {{- toYaml . | nindent 12 }}
