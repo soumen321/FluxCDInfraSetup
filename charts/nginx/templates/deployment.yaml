@@ -44,6 +44,13 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
+          volumeMounts:
+            - name: html
+              mountPath: /usr/share/nginx/html 
+      volumes:
+        - name: html
+          configMap:
+            name: {{ ".Release.Name" }}-index-html          
           {{- with .Values.livenessProbe }}
           livenessProbe:
             {{- toYaml . | nindent 12 }}
